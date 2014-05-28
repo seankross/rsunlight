@@ -13,7 +13,7 @@ cg_getcommitteesallleg <- function(bioguide_id = NULL,
     callopts = list()) 
 {
   url = "https://congress.api.sunlightfoundation.com/committees"
-  args <- suncompact(list(apikey = key, bioguide_id = bioguide_id))
+  args <- suncompact(list(apikey = key, member_ids = bioguide_id))
   tt <- GET(url, query=args, callopts)
   stop_for_status(tt)
   out <- content(tt, as = "text")
